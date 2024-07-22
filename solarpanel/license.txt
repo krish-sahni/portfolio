@@ -1,0 +1,11 @@
+Model Information:
+* title:	SolarPanel
+* source:	https://sketchfab.com/3d-models/solarpanel-0f5a6f5205a94b66a73b6fbef923f4a3
+* author:	Joel From (https://sketchfab.com/joelfromsweden)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SolarPanel" (https://sketchfab.com/3d-models/solarpanel-0f5a6f5205a94b66a73b6fbef923f4a3) by Joel From (https://sketchfab.com/joelfromsweden) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
