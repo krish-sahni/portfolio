@@ -26,23 +26,23 @@ const Computers = () => {
     <primitive
       ref={group}
       object={scene}
-      scale={0.002}  // Increased scale to make the model larger
-      position={[1.4, -0.7, 0]}  // Adjusted position to shift model to the right and down
-      rotation={[0, Math.PI, 0]}  // Adjusted rotation to face the screen
+      scale={0.002}
+      position={[1.4, -0.7, 0]}
+      rotation={[0, Math.PI, 0]}
     />
   );
 };
 
 const ComputersCanvas = () => {
   return (
-    <Canvas camera={{ position: [0, 5, 0], fov: 25 }}>  // Adjusted camera position for a closer view
+    <Canvas camera={{ position: [0, 5, 0], fov: 25 }}>
       <Suspense fallback={<CanvasLoader />}>
-        <ambientLight intensity={1.5} />  // Increased ambient light intensity
-        <directionalLight position={[0, 10, 0]} intensity={1.5} />  // Increased directional light intensity
-        <pointLight position={[0, -0.2, 0]} intensity={1.5} />  // Increased point light intensity
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[0, 10, 0]} intensity={1.5} />
+        <pointLight position={[0, -0.2, 0]} intensity={1.5} />
         <OrbitControls
           enableZoom={false}
-          enableRotate={false}  // Disable rotation
+          enableRotate={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
