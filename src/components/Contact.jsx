@@ -71,6 +71,7 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
+        <p className={styles.sectionSubText}>Email: krishsahni2005@gmail.com</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>

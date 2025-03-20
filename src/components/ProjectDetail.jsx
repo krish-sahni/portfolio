@@ -47,7 +47,7 @@ const ProjectDetail = () => {
         <h2 className={styles.sectionHeadText}>{project.name}.</h2>
       </motion.div>
 
-      {id === "0" && ( // Assuming "0" is the ID for the Tetris project
+      {id === "3" && ( // Assuming "0" is the ID for the Tetris project
         <img 
           src={tetrisGif} 
           alt="Tetris Game" 
@@ -55,7 +55,7 @@ const ProjectDetail = () => {
         />
       )}
 
-      {id === "1" && ( // Assuming "1" is the ID for the project with IMG_7238.gif
+      {id === "4" && ( // Assuming "1" is the ID for the project with IMG_7238.gif
         <img 
           src={IMG_7238} 
           alt="Project 1 GIF" 
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
         </motion.div>
       </div>
       
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <motion.div variants={textVariant()}>
           <h2 className={styles.sectionSubHeading}>Impact and Results</h2>
         </motion.div>
@@ -118,7 +118,7 @@ const ProjectDetail = () => {
         >
         {project.impact_results}
         </motion.p>
-      </div>
+      </div> */}
       
       <div className="mb-4">
         <motion.div variants={textVariant()}>
@@ -141,7 +141,7 @@ const ProjectDetail = () => {
         </motion.div>
       </div>
       
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <motion.div variants={textVariant()}>
           <h2 className={styles.sectionSubHeading}>Future Work</h2>
         </motion.div>
@@ -151,7 +151,7 @@ const ProjectDetail = () => {
         >
         {project.future_work}
         </motion.p>
-      </div>
+      </div> */}
     </div>
   );
 };

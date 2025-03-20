@@ -18,8 +18,10 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Krish</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I engineer solutions in robotics, <br className='sm:block hidden' />
-            automation, and control systems to <br className='sm:block hidden' /> create a smarter, more efficient future.
+            I develop embedded systems and<br className='sm:block hidden' />
+            autonomous robotics, integrating<br className='sm:block hidden' />
+            hardware and software for real-world <br className='sm:block hidden' />
+            automation and control.
           </p>
           {/* <div className="mt-4 flex space-x-4">
             <a href="https://www.linkedin.com/in/krishsahni" target="_blank" rel="noopener noreferrer">

@@ -113,20 +113,17 @@ const About = () => {
         <p className={styles.sectionSubText}
         >Introduction</p>
         <h2 className={styles.sectionHeadText}
-        >Overview.</h2>
+        >About Me.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm an electrical engineer with a passion for robotics, 
-        control systems, and sustainable energy solutions. Skilled 
-        in developing innovative, scalable, and user-friendly 
-        technologies, I aim to solve real-world problems and drive 
-        technological advancements. As a quick learner, I excel in 
-        collaborative environments and am dedicated to creating a 
-        smarter, more efficient future.
+        I'm a Computer Engineering student at UIUC with a passion for embedded systems, robotics, 
+        and control theory. I've worked on autonomous drones, firmware development, and FPGA design,
+        bridging software and hardware to build intelligent automation solutions. Currently, I'm
+        researching control strategies for drone swarms and developing real-time embedded systems.
       </motion.p>
     
       <div className='mt-20 flex flex-wrap gap-10'>
