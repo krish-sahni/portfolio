@@ -42,6 +42,16 @@ import mini_pv_electrical from '../assets/mini_pv_electrical.png'
 import mini_pv_pic from '../assets/mini_pv_pic.png'
 import e486_pic_2 from '../assets/e486_pic_2.png'
 import e486_pic_setup from '../assets/486_pic_setup.png'
+import risc_pic from '../assets/risc.png'
+import rpi_pic from '../assets/image.jpg'
+import oak_pic_me from '../assets/oak_working_me.png'
+import ros_vid from '../assets/ros_vid.gif'
+import crazyflie_pic from '../assets/crazyflie_pic.png'
+import crazyflie_gif from '../assets/crazyflie.gif'
+import kernel_arch from '../assets/kernel_arch.png'
+import filesys_overview from '../assets/filesys_overview.png'
+import slc3_pic from '../assets/SLC3_Block_Diagram.png'
+
 
 
 export const navLinks = [
@@ -135,6 +145,19 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Undergraduate Research Assistant",
+    company_name: "Coordinated Science Laboratory",
+    icon: uiuc_logo,
+    iconBg: "#F7F7F7",
+    date: "Sep 2024 - Present",
+    points: [
+      "Implementing control algorithms for a multi-drone system using limited information constraints.",
+      "Developed a data encoding method to compress drone controllability information for efficient transmission.",
+      "Successfully enabled coordination of 4 drones under strict bandwidth limitations; optimizing the system to accommodate a 5th drone.",
+      "Collaborating with a graduate student to realize theoretical control strategies in practical applications."
+    ],
+  },
+  {
     title: "Reliability Engineering Intern",
     company_name: "Freeport McMoRan",
     icon: freeportlogo,
@@ -215,8 +238,83 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Tetris Game in System Verilog and Vivado",
-    description: "A fully functional Tetris game implemented in System Verilog and Vivado, featuring piece rotation, scoring, and game screens.",
+    name: "AI-Powered Autonomous Vision for Drones",
+    description: "Developing an AI-driven vision system for real-time object detection and mapping on a drone using an Oak-D Lite camera, a Raspberry Pi, and ROS DDS for data transfer.",    
+    tags: [
+      { name: "Neural Networks", color: "blue-text-gradient" },
+      { name: "SLAM", color: "green-text-gradient" },
+      { name: "ROS", color: "pink-text-gradient" },
+      { name: "Pixhawk 4", color: "orange-text-gradient" },
+      { name: "Edge AI", color: "blue-text-gradient" }
+    ],
+    image: rpi_pic, // Replace with actual image when available
+    source_code_link: "https://github.com/krish-sahni/ROS_object_detection", // Placeholder, update if needed
+    more_info_link: "/projects/0",
+    detailed_description: "This project focuses on building an AI-driven vision system for drone navigation. A neural network processes real-time data from an Oak-D Lite camera mounted on a Raspberry Pi, transmitting insights via ROS DDS to a laptop. The next step is integrating SLAM (Simultaneous Localization and Mapping), enabling autonomous navigation. The vision system will soon be deployed onto a custom-built Pixhawk 4-based drone, allowing it to autonomously explore and map unknown environments.",    
+    visual_aids: [
+      { type: "Face Detection", src: oak_pic_me },
+      { type: "ROS Data Transfer to Laptop", src: ros_vid },
+      // { type: "SLAM Visualization", src: "slam_map.png" }
+    ],
+    // impact_results: "This project showcases expertise in edge AI, robotics, and real-time perception. Running neural networks on a resource-constrained embedded system and integrating it with drone navigation demonstrates a strong understanding of autonomous systems and sensor fusion. The SLAM implementation will provide real-time mapping capabilities, enhancing autonomy for search-and-rescue, surveillance, or exploration applications.",
+    documentation: [
+      // { type: "Technical Report", link: "https://docs.google.com/document/d/1DroneVision_Report" },
+      { type: "Source Code", link: "https://github.com/krish-sahni/ROS_object_detection" }
+    ],
+    // future_work: "Future improvements include optimizing neural network inference for real-time performance, refining SLAM algorithms, and expanding autonomous decision-making using onboard AI. The final phase will integrate the system with the drone for fully autonomous navigation, enabling real-world deployment in dynamic environments."
+  },  
+  {
+    name: "Multi-Drone Control with Limited Information",
+    description: "Developing an optimized encoding strategy for multi-drone control, enabling 5 drones to communicate and coordinate using constrained bandwidth.",
+    tags: [
+      { name: "Control Theory", color: "blue-text-gradient" },
+      { name: "Multi-Agent Systems", color: "green-text-gradient" },
+      { name: "Embedded Optimization", color: "pink-text-gradient" },
+      { name: "Robotics", color: "orange-text-gradient" }
+    ],
+    image: crazyflie_pic, 
+    // source_code_link: "https://github.com/krish-sahni/multi-drone-control", // If applicable
+    more_info_link: "/projects/1",
+    detailed_description: "This project implements a theoretical framework for controlling a swarm of drones under strict bandwidth limitations. By developing an optimized encoding strategy, we allow a single data packet to encode controllability information for 5 drones. Currently, we have successfully tested a 4-drone system and are optimizing the setup to accommodate the 5th drone. The research investigates the fundamental limits of control theory with limited information.",
+    visual_aids: [
+      { type: "Demo Video", src: crazyflie_gif },
+      // { type: "Simulation Output", src: "drone_simulation.gif" }
+    ],
+    impact_results: "Demonstrates advancements in bandwidth-efficient control strategies for multi-agent robotic systems, with potential applications in aerial swarm robotics and decentralized control networks.",
+    documentation: [
+      { type: "Research Paper", link: "https://liberzon.csl.illinois.edu/research/coding-tac.pdf" }
+    ],
+    future_work: "Future developments include improving encoding efficiency, extending the method to heterogeneous drone networks, and testing real-world deployment."
+  },  
+  {
+    name: "Unix-Based Operating System for RISC-V Embedded Systems",
+    description: "Engineered a Unix-like operating system with virtual memory management, system calls, ELF file loading, and preemptive multitasking, built for RISC-V embedded systems.",    
+    tags: [
+      { name: "Operating Systems", color: "blue-text-gradient" },
+      { name: "RISC-V Assembly", color: "green-text-gradient" },
+      { name: "Memory Management", color: "pink-text-gradient" },
+      { name: "Multithreading", color: "orange-text-gradient" },
+    ],
+    image: risc_pic, // Replace with the correct image path
+    source_code_link: "https://github.com/krish-sahni/Unix_like_OS",
+    more_info_link: "/projects/2",
+    detailed_description: "Built a Unix-like operating system from the ground up for RISC-V embedded systems. The OS features a custom file system, I/O management, process scheduling, and memory protection, following the Sv39 paging standard. Supports preemptive multitasking, system calls for user applications, and ELF file execution. Implemented virtual memory control and multi-threading/multi-processing capabilities, optimizing it for embedded hardware environments.",    visual_aids: [
+      { type: "Kernel Architecture Diagram", src: kernel_arch },
+      {type: "Filesystem Overview", src: filesys_overview}
+      // { type: "System Call Workflow", src: "syscall_workflow.png" },
+      // { type: "Virtual Memory Paging Overview", src: "virtual_memory_paging.png" },
+    ],
+    impact_results: "This project deepened my understanding of OS development, memory management, and process scheduling. Implementing low-level system features, such as an ELF loader and a multi-threading kernel, strengthened my expertise in RISC-V architecture, embedded systems, and real-time control. The experience directly contributes to my goal of working in embedded firmware, robotics, and hardware design.",
+    documentation: [
+      // { type: "Project Report", link: "https://docs.google.com/document/d/1OS_Report" },
+      { type: "Source Code", link: "https://github.com/krish-sahni/Unix_like_OS" },
+    ],
+    future_work: "Future improvements include expanding the OS to support dynamic memory allocation, adding a scheduler with more advanced thread management, and improving the virtual memory system to support demand paging. Additionally, I aim to integrate device drivers for more hardware peripherals and further optimize system performance for embedded applications.",
+  },
+  
+  {
+    name: "FPGA-Accelerated Tetris Game Using SystemVerilog",
+    description: "Designed and implemented a high-performance FPGA-based Tetris game, leveraging SystemVerilog and Vivado for real-time processing and display.",    
     tags: [
       {
         name: "SystemVerilog",
@@ -229,8 +327,8 @@ const projects = [
     ],
     image: tetris_logo,
     source_code_link: "https://github.com/krish-sahni/tetris-game-system-verilog",
-    more_info_link: "/projects/0",
-    detailed_description: "Developed a digital system to implement a classic Tetris game as part of the final project for ECE 385 (Digital Systems Laboratory). This project involved designing and implementing the game logic in hardware, ensuring smooth and responsive gameplay. My role included designing the overall game architecture, implementing algorithms for piece movement and rotation, and conducting thorough testing to ensure reliability and performance. The game features a start screen, an end screen, a real-time score counter displayed on the FPGA board, instant drop-down functionality for game pieces, and automatic line clearing. These elements combined to create an engaging and fully operational version of Tetris on a hardware platform, demonstrating my proficiency in System Verilog and Vivado, as well as my ability to integrate software and hardware components effectively.",
+    more_info_link: "/projects/3",
+    detailed_description: "Developed an FPGA-based Tetris game using SystemVerilog and Vivado as part of a digital systems design project. Implemented real-time piece rotation, collision detection, and scoring logic, displayed via VGA output. Optimized the hardware architecture for low-latency performance, leveraging parallel processing on FPGA logic blocks.",    
     visual_aids: [
       { type: "Block diagram of the game logic", src: tetris_game_logic },
       { type: "Start screen", src: tetris_image_jpg },
@@ -246,8 +344,8 @@ const projects = [
 
   },
   {
-    name: "Automated Room Sensor with Ultrasonic Sensors",
-    description: "A sensor system to detect hand movements and control room functionalities like light switches.",
+    name: "Gesture-Based Smart Room Automation with Ultrasonic Sensors",
+    description: "Designed an intelligent room automation system using ultrasonic sensors to detect hand gestures, enabling seamless touch-free control of electronic appliances.",    
     tags: [
       {
         name: "UltrasonicSensors",
@@ -264,8 +362,8 @@ const projects = [
     ],
     image: Arduino_pic,
     source_code_link: "https://github.com/krish-sahni/Hand-Sensing-for-Room-Automation/",
-    more_info_link: "/projects/1",
-    detailed_description: "This project involved creating an automated room control system utilizing ultrasonic sensors to detect hand movements. I designed a custom sensor array with three HCSR04 sensors arranged in a triangular setup, mounted on a 3D printed fixture. The sensors were connected to an Arduino, where I implemented code to detect hand movements in six directions, ensuring accurate motion detection and avoiding false triggers. The system used the NRF24L01 module for wireless communication with another Arduino, enabling remote control of devices such as a motor for switching lights on and off.",
+    more_info_link: "/projects/4",
+    detailed_description: "Engineered a gesture-based smart room automation system using ultrasonic sensors and Arduino. Designed a custom 3D-printed sensor mount and implemented gesture recognition algorithms to enable touch-free control of lights and appliances. Utilized wireless communication (NRF24L01 module) to expand automation capabilities across multiple devices.",    
     visual_aids: [
       { type: "3D Print Casing", src: cad_photo },
       // { type: "Start screen", src: tetris_image_jpg },
@@ -282,8 +380,33 @@ const projects = [
     future_work: "Future enhancements could focus on improving the system's accuracy and functionality. Potential upgrades include refining the motion detection algorithms for better precision, adding support for controlling multiple devices, and enhancing the graphical interface for user interaction. Incorporating machine learning techniques could further improve gesture recognition and adaptability. These advancements align with my goals in automation and hardware design, offering opportunities to further develop and demonstrate my expertise.",
   },
   {
-    name: "Mini PV System for Charging Devices",
-    description: "A photovoltaic system to charge electronic devices, being upgraded to a dual-axis solar tracking system.",
+    name: "FPGA-Based 16-bit LC3 CPU Implementation",
+    description: "Designed and implemented a fully functional LC3 CPU on an FPGA using SystemVerilog, capable of executing LC3 assembly instructions with memory-mapped I/O.",
+    tags: [
+      { name: "FPGA", color: "blue-text-gradient" },
+      { name: "SystemVerilog", color: "green-text-gradient" },
+      { name: "Computer Architecture", color: "pink-text-gradient" },
+      { name: "Embedded Systems", color: "orange-text-gradient" }
+    ],
+    image: slc3_pic, // Replace with the actual image if available
+    // source_code_link: "https://github.com/krish-sahni/lc3-cpu-fpga", // Placeholder, update if needed
+    more_info_link: "/projects/5",
+    detailed_description: "Developed a **custom 16-bit CPU** on an FPGA, implementing the **LC3 architecture** using **SystemVerilog**. The CPU features **8 general-purpose registers, a program counter, an Arithmetic Logic Unit (ALU), and a control unit**. The design supports **memory-mapped I/O for efficient input and output operations**. The FPGA-based implementation is capable of executing **LC3 assembly code**, supporting the full instruction set defined in the **LC3 ISA (Instruction Set Architecture)**.",
+    visual_aids: [
+      { type: "CPU Architecture Diagram", src: slc3_pic },
+      // { type: "FPGA Implementation", src: "fpga_setup.png" },
+      // { type: "Memory Mapped I/O", src: "memory_io.png" }
+    ],
+    impact_results: "This project demonstrates proficiency in **computer architecture, digital design, and FPGA development**. The implementation of a custom CPU from scratch showcases expertise in **hardware description languages (HDLs), instruction set design, and embedded system optimization**. The FPGA-based CPU successfully executes LC3 assembly programs, making it a functional and scalable embedded computing system.",
+    documentation: [
+      // { type: "Technical Report", link: "https://docs.google.com/document/d/1LC3_CPU_Report" },
+      // { type: "Source Code", link: "https://github.com/krish-sahni/lc3-cpu-fpga" }
+    ],
+    future_work: "Future improvements include **pipeline optimization**, expanding instruction set capabilities, and integrating support for **external peripherals via UART or SPI interfaces**. Additional enhancements could include designing a **custom assembler or compiler** to streamline software development for the FPGA-based CPU."
+  }, 
+  {
+    name: "Solar Power System with Dual-Axis Tracking",    
+    description: "Developed a solar energy system optimized for high efficiency, integrating a dual-axis tracking mechanism and smart energy management.",
     tags: [
       {
         name: "SolarPanels",
@@ -304,8 +427,8 @@ const projects = [
     ],
     image: mini_pv_pic,
     source_code_link: "https://github.com/",
-    more_info_link: "/projects/2",
-    detailed_description: "This project involved creating a mini photovoltaic (PV) system to showcase the principles of solar power generation and storage. I connected a solar panel to a series of components including a multimeter, charge controller, inverter, low voltage disconnect, battery, and an outlet. The system captures solar energy through the panel, which is then regulated by the charge controller and stored in the battery. The inverter converts the stored energy to a usable form, and the low voltage disconnect ensures the battery does not get over-discharged. The setup also includes an outlet for practical usage of the generated power.",
+    more_info_link: "/projects/6",
+    detailed_description: "Designed a self-sustaining solar power system integrating a dual-axis tracking mechanism for maximum efficiency. Engineered an intelligent power management system using a charge controller, inverter, and battery storage to optimize energy output. The system is scalable for off-grid applications and smart energy solutions.",    
     visual_aids: [
       { type: "Electrical schematic of the PV system", src: mini_pv_electrical },
       // "Electrical schematic of the PV system",
@@ -314,14 +437,14 @@ const projects = [
     ],
     impact_results: "This project highlighted my ability to design and implement a renewable energy system, showcasing my understanding of solar power generation and energy storage principles. It demonstrated my skills in integrating various electrical components to create a functional system, aligning with my career aspirations in renewable energy, automation, and hardware design. The successful operation of the mini PV system served as a practical example of sustainable energy solutions, reinforcing my commitment to advancing renewable energy technologies.",
     documentation: [
-      { type: "Project Report", link: "https://drive.google.com/drive/u/0/folders/1Te-6xEVfTtUVoNyk54CTHhVdVFe5r3CF" },
+      { type: "Project Drive", link: "https://drive.google.com/drive/u/0/folders/1Te-6xEVfTtUVoNyk54CTHhVdVFe5r3CF" },
       // { type: "Source Code", link: "https://github.com/" },
     ],
     future_work: "Future enhancements for this project could include scaling up the system for higher power output, integrating more advanced monitoring and control systems for better efficiency, and exploring ways to optimize the energy storage process. Additionally, incorporating remote monitoring capabilities could provide real-time insights into the system's performance. These advancements align with my goals in renewable energy and hardware design, offering further opportunities to develop and demonstrate my expertise.",
-  },
+  }, 
   {
-    name: "Inverted Pendulum Control System",
-    description: "A control system to stabilize an inverted pendulum using advanced control strategies.",
+    name: "Real-Time Control of an Inverted Pendulum System",
+    description: "Developed a control system to stabilize an inverted pendulum, implementing advanced feedback control strategies and real-time simulation testing.",
     tags: [
       {
         name: "ControlTheory",
@@ -338,8 +461,8 @@ const projects = [
     ],
     image: e486_pic_setup,
     source_code_link: "https://github.com/",
-    more_info_link: "/projects/3",
-    detailed_description: "Implemented various control strategies to stabilize an inverted pendulum, a classic control problem. My role included developing mathematical models, implementing control algorithms, and conducting testing.",
+    more_info_link: "/projects/7",
+    detailed_description: "Built a real-time control system to stabilize an inverted pendulum, a fundamental problem in control theory and robotics. Implemented PID and state-space controllers, refining system response through simulation and hardware testing. This project demonstrates proficiency in real-time feedback control, dynamic modeling, and embedded control system design.",
     visual_aids: [
       { type: "Block diagram of the control system", src: e486_pic_2 },
       // "Block diagram of the control system",
