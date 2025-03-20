@@ -21,9 +21,8 @@ const ProjectCard = ({
   const navigate = useNavigate();
 
   const handleMoreInfoClick = () => {
-    window.open(more_info_link, "_blank");
+    navigate(more_info_link, { state: { scrollTo: true } });
   };
-  
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="flex justify-center">
