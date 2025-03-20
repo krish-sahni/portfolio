@@ -36,9 +36,14 @@ const ProjectDetail = () => {
 
   return (
     <div className="container mx-auto p-8 relative">
-      <button 
-        onClick={() => navigate("/#projects")} 
-        className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded mb-8"
+      <button
+        onClick={() => {
+          navigate("/#projects"); // Navigate back
+          setTimeout(() => {
+            document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+          }, 50); // Scrolls down smoothly after a short delay
+        }}
+        className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
       >
         Back
       </button>
