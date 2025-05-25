@@ -18,7 +18,7 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Krish</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop embedded systems and<br className='sm:block hidden' />
+            I engineer embedded systems and<br className='sm:block hidden' />
             autonomous robotics, integrating<br className='sm:block hidden' />
             hardware and software for real-world <br className='sm:block hidden' />
             automation and control.

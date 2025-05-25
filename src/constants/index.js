@@ -82,19 +82,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Electrical Design Specialist",
+    title: "Embedded Hardware Engineer",
     icon: plug,
   },
   {
-    title: "Robotics Engineer",
+    title: "Autonomous Systems Engineer",
     icon: ai,
   },
   {
-    title: "Embedded Systems Developer",
+    title: "Real-Time Embedded Engineer",
     icon: emsys,
   },
   {
-    title: "Renewable Energy Innovator",
+    title: "Mechatronics + Energy Systems",
     icon: renew,
   },
 ];
@@ -244,32 +244,7 @@ const testimonials = [
 ];
 
 const projects = [
-  {
-    name: "AI-Powered Vision for Drones",
-    description: "Developing an AI-driven vision system for real-time object detection and mapping on a drone using an Oak-D Lite camera, a Raspberry Pi, and ROS DDS for data transfer.",    
-    tags: [
-      { name: "Neural Networks", color: "blue-text-gradient" },
-      { name: "SLAM", color: "green-text-gradient" },
-      { name: "ROS", color: "pink-text-gradient" },
-      { name: "Pixhawk 4", color: "orange-text-gradient" },
-      { name: "Edge AI", color: "blue-text-gradient" }
-    ],
-    image: rpi_pic, // Replace with actual image when available
-    source_code_link: "https://github.com/krish-sahni/ROS_object_detection", // Placeholder, update if needed
-    more_info_link: "/projects/0",
-    detailed_description: "This project focuses on building an AI-driven vision system for drone navigation. A neural network processes real-time data from an Oak-D Lite camera mounted on a Raspberry Pi, transmitting insights via ROS DDS to a laptop. The next step is integrating SLAM (Simultaneous Localization and Mapping), enabling autonomous navigation. The vision system will soon be deployed onto a custom-built Pixhawk 4-based drone, allowing it to autonomously explore and map unknown environments.",    
-    visual_aids: [
-      { type: "Face Detection", src: oak_pic_me },
-      { type: "ROS Data Transfer to Laptop", src: ros_vid },
-      // { type: "SLAM Visualization", src: "slam_map.png" }
-    ],
-    // impact_results: "This project showcases expertise in edge AI, robotics, and real-time perception. Running neural networks on a resource-constrained embedded system and integrating it with drone navigation demonstrates a strong understanding of autonomous systems and sensor fusion. The SLAM implementation will provide real-time mapping capabilities, enhancing autonomy for search-and-rescue, surveillance, or exploration applications.",
-    documentation: [
-      // { type: "Technical Report", link: "https://docs.google.com/document/d/1DroneVision_Report" },
-      { type: "Source Code", link: "https://github.com/krish-sahni/ROS_object_detection" }
-    ],
-    // future_work: "Future improvements include optimizing neural network inference for real-time performance, refining SLAM algorithms, and expanding autonomous decision-making using onboard AI. The final phase will integrate the system with the drone for fully autonomous navigation, enabling real-world deployment in dynamic environments."
-  },  
+
   {
     name: "Multi-Drone Control with Limited Information",
     description: "Developing an optimized encoding control strategy for multi-drone control, enabling 10 drones to communicate and coordinate using constrained bandwidth.",
@@ -281,7 +256,7 @@ const projects = [
     ],
     image: crazyflie_pic, 
     source_code_link: "https://github.com/krish-sahni/embedded_control_crazyflie", // If applicable
-    more_info_link: "/projects/1",
+    more_info_link: "/projects/0",
     detailed_description: "This project implements a theoretical framework for controlling a swarm of drones under strict bandwidth limitations. By developing an optimized encoding strategy, we allow a single data packet to encode controllability information for 10 drones. Currently, we have successfully tested a 4-drone system and are optimizing the setup to accommodate the rest. The research investigates the fundamental limits of control theory with limited information.",
     visual_aids: [
       { type: "Demo Video", src: crazyflie_gif },
@@ -300,13 +275,14 @@ const projects = [
     description: "Building an autonomous drone platform to support disaster relief through real-time sensing, navigation, and object detection",
     tags: [
       { name: "Autonomous Flight", color: "blue-text-gradient" },
+      { name: "PCB Design", color: "orange-text-gradient" },
       { name: "Embedded Systems", color: "green-text-gradient" },
       { name: "Edge AI", color: "pink-text-gradient" },
-      { name: "FreeRTOS", color: "orange-text-gradient" }
+      { name: "FreeRTOS", color: "blue-text-gradient" }
     ],
     image: drone_Cad, 
     // source_code_link: "https://github.com/krish-sahni/multi-drone-control", // If applicable
-    more_info_link: "/projects/2",
+    more_info_link: "/projects/1",
     detailed_description: "This project focuses on building a drone platform for disaster relief. The drone will be equipped with an Oak-D Lite camera for real-time object detection and a Pixhawk 4 flight controller for autonomous navigation. The system will utilize FreeRTOS for real-time task management, enabling efficient processing of sensor data and control commands. The goal is to create a reliable and efficient drone capable of navigating complex environments and identifying critical objects in disaster scenarios.",
     visual_aids: [
       { type: "PCB Pic top", src: pcb_pic1 },
@@ -332,7 +308,7 @@ const projects = [
     ],
     image: gazebo_track,  // Replace with Gazebo sim or hardware image
     source_code_link: "https://github.com/krish-sahni/f1tenth_sim_environment",  // Add your repo if public
-    more_info_link: "/projects/3",
+    more_info_link: "/projects/2",
     detailed_description: "This project involved developing and deploying a Model Predictive Control (MPC) framework for an autonomous F1TENTH vehicle to follow a predefined trajectory while avoiding dynamic obstacles. The system models vehicle kinematics, discretizes dynamics, and formulates a quadratic programming (QP) problem solved at 10 Hz using cvxpy and the OSQP solver. Dynamic obstacles are encoded as half-space constraints to ensure safe avoidance. The controller was tested in both Gazebo simulation and real hardware, achieving smooth, collision-free trajectory tracking in cluttered environments.",
     visual_aids: [
       { type: "Simulation Waypoints", src: waypoints_484 },
@@ -348,6 +324,32 @@ const projects = [
     future_work: "Integrate perception-based dynamic path replanning, improve speed tuning under aggressive curvature, and explore switching MPC formulations for tighter real-time constraints."
   },
 
+  {
+    name: "AI-Powered Vision for Drones",
+    description: "Developing an AI-driven vision system for real-time object detection and mapping on a drone using an Oak-D Lite camera, a Raspberry Pi, and ROS DDS for data transfer.",    
+    tags: [
+      { name: "Neural Networks", color: "blue-text-gradient" },
+      { name: "SLAM", color: "green-text-gradient" },
+      { name: "ROS", color: "pink-text-gradient" },
+      { name: "Pixhawk 4", color: "orange-text-gradient" },
+      { name: "Edge AI", color: "blue-text-gradient" }
+    ],
+    image: rpi_pic, // Replace with actual image when available
+    source_code_link: "https://github.com/krish-sahni/ROS_object_detection", // Placeholder, update if needed
+    more_info_link: "/projects/3",
+    detailed_description: "This project focuses on building an AI-driven vision system for drone navigation. A neural network processes real-time data from an Oak-D Lite camera mounted on a Raspberry Pi, transmitting insights via ROS DDS to a laptop. The next step is integrating SLAM (Simultaneous Localization and Mapping), enabling autonomous navigation. The vision system will soon be deployed onto a custom-built Pixhawk 4-based drone, allowing it to autonomously explore and map unknown environments.",    
+    visual_aids: [
+      { type: "Face Detection", src: oak_pic_me },
+      { type: "ROS Data Transfer to Laptop", src: ros_vid },
+      // { type: "SLAM Visualization", src: "slam_map.png" }
+    ],
+    // impact_results: "This project showcases expertise in edge AI, robotics, and real-time perception. Running neural networks on a resource-constrained embedded system and integrating it with drone navigation demonstrates a strong understanding of autonomous systems and sensor fusion. The SLAM implementation will provide real-time mapping capabilities, enhancing autonomy for search-and-rescue, surveillance, or exploration applications.",
+    documentation: [
+      // { type: "Technical Report", link: "https://docs.google.com/document/d/1DroneVision_Report" },
+      { type: "Source Code", link: "https://github.com/krish-sahni/ROS_object_detection" }
+    ],
+    // future_work: "Future improvements include optimizing neural network inference for real-time performance, refining SLAM algorithms, and expanding autonomous decision-making using onboard AI. The final phase will integrate the system with the drone for fully autonomous navigation, enabling real-world deployment in dynamic environments."
+  },  
 
   {
     name: "Unix-Based Operating System for RISC-V Embedded Systems",
