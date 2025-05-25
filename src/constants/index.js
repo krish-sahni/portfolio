@@ -59,7 +59,7 @@ import gazebo_track from '../assets/gazebo_track_484.png'
 import waypoints_484 from '../assets/waypoints_484.png'
 import obstacle_avoidance_sim from '../assets/obstacle_avoidance_sim.gif'
 import mpc_results from '../assets/484_mpc_results.png'
-import mpc_test from '../assets/MPC_TEST.gif'
+import mpc_test from '../assets/mpc_test_2.gif'
 
 export const navLinks = [
   {
