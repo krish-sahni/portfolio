@@ -52,7 +52,7 @@ const ProjectDetail = () => {
         <h2 className={styles.sectionHeadText}>{project.name}.</h2>
       </motion.div>
 
-      {id === "3" && ( // Assuming "0" is the ID for the Tetris project
+      {id === "5" && ( // Assuming "0" is the ID for the Tetris project
         <img 
           src={tetrisGif} 
           alt="Tetris Game" 
@@ -60,7 +60,7 @@ const ProjectDetail = () => {
         />
       )}
 
-      {id === "4" && ( // Assuming "1" is the ID for the project with IMG_7238.gif
+      {id === "6" && ( // Assuming "1" is the ID for the project with IMG_7238.gif
         <img 
           src={IMG_7238} 
           alt="Project 1 GIF" 

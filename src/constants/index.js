@@ -51,8 +51,15 @@ import crazyflie_gif from '../assets/crazyflie.gif'
 import kernel_arch from '../assets/kernel_arch.png'
 import filesys_overview from '../assets/filesys_overview.png'
 import slc3_pic from '../assets/SLC3_Block_Diagram.png'
-
-
+import pcb_pic1 from '../assets/pcb_pic1.png'
+import pcb_pic2 from '../assets/pcb_pic2.png'
+import drone_Cad from '../assets/drone_Cad.png'
+import drone_Cad2 from '../assets/drone_Cad2.png'
+import gazebo_track from '../assets/gazebo_track_484.png'
+import waypoints_484 from '../assets/waypoints_484.png'
+import obstacle_avoidance_sim from '../assets/obstacle_avoidance_sim.gif'
+import mpc_results from '../assets/484_mpc_results.png'
+import mpc_test from '../assets/MPC_TEST.gif'
 
 export const navLinks = [
   {
@@ -238,7 +245,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "AI-Powered Autonomous Vision for Drones",
+    name: "AI-Powered Vision for Drones",
     description: "Developing an AI-driven vision system for real-time object detection and mapping on a drone using an Oak-D Lite camera, a Raspberry Pi, and ROS DDS for data transfer.",    
     tags: [
       { name: "Neural Networks", color: "blue-text-gradient" },
@@ -265,7 +272,7 @@ const projects = [
   },  
   {
     name: "Multi-Drone Control with Limited Information",
-    description: "Developing an optimized encoding strategy for multi-drone control, enabling 5 drones to communicate and coordinate using constrained bandwidth.",
+    description: "Developing an optimized encoding control strategy for multi-drone control, enabling 10 drones to communicate and coordinate using constrained bandwidth.",
     tags: [
       { name: "Control Theory", color: "blue-text-gradient" },
       { name: "Multi-Agent Systems", color: "green-text-gradient" },
@@ -273,9 +280,9 @@ const projects = [
       { name: "Robotics", color: "orange-text-gradient" }
     ],
     image: crazyflie_pic, 
-    // source_code_link: "https://github.com/krish-sahni/multi-drone-control", // If applicable
+    source_code_link: "https://github.com/krish-sahni/embedded_control_crazyflie", // If applicable
     more_info_link: "/projects/1",
-    detailed_description: "This project implements a theoretical framework for controlling a swarm of drones under strict bandwidth limitations. By developing an optimized encoding strategy, we allow a single data packet to encode controllability information for 5 drones. Currently, we have successfully tested a 4-drone system and are optimizing the setup to accommodate the 5th drone. The research investigates the fundamental limits of control theory with limited information.",
+    detailed_description: "This project implements a theoretical framework for controlling a swarm of drones under strict bandwidth limitations. By developing an optimized encoding strategy, we allow a single data packet to encode controllability information for 10 drones. Currently, we have successfully tested a 4-drone system and are optimizing the setup to accommodate the rest. The research investigates the fundamental limits of control theory with limited information.",
     visual_aids: [
       { type: "Demo Video", src: crazyflie_gif },
       // { type: "Simulation Output", src: "drone_simulation.gif" }
@@ -286,6 +293,62 @@ const projects = [
     ],
     future_work: "Future developments include improving encoding efficiency, extending the method to heterogeneous drone networks, and testing real-world deployment."
   },  
+
+
+  {
+    name: "Drone for Disaster Relief (In Progress)",
+    description: "Building an autonomous drone platform to support disaster relief through real-time sensing, navigation, and object detection",
+    tags: [
+      { name: "Autonomous Flight", color: "blue-text-gradient" },
+      { name: "Embedded Systems", color: "green-text-gradient" },
+      { name: "Edge AI", color: "pink-text-gradient" },
+      { name: "FreeRTOS", color: "orange-text-gradient" }
+    ],
+    image: drone_Cad, 
+    // source_code_link: "https://github.com/krish-sahni/multi-drone-control", // If applicable
+    more_info_link: "/projects/2",
+    detailed_description: "This project focuses on building a drone platform for disaster relief. The drone will be equipped with an Oak-D Lite camera for real-time object detection and a Pixhawk 4 flight controller for autonomous navigation. The system will utilize FreeRTOS for real-time task management, enabling efficient processing of sensor data and control commands. The goal is to create a reliable and efficient drone capable of navigating complex environments and identifying critical objects in disaster scenarios.",
+    visual_aids: [
+      { type: "PCB Pic top", src: pcb_pic1 },
+      { type: "PCB Pic bottom", src: pcb_pic2 },
+      { type: "Drone CAD Model", src: drone_Cad2 },
+      // { type: "Simulation Output", src: "drone_simulation.gif" }
+    ],
+    impact_results: "",
+    documentation: [
+      // { type: "Research Paper", link: "https://liberzon.csl.illinois.edu/research/coding-tac.pdf" }
+    ],
+    // future_work: ""
+  },  
+
+  {
+    name: "MPC Path Tracking and Obstacle Avoidance",
+    description: "Implemented a real-time MPC controller for trajectory tracking and dynamic obstacle avoidance using a 1/10th scale autonomous vehicle.",
+    tags: [
+      { name: "Model Predictive Control", color: "blue-text-gradient" },
+      { name: "Optimization", color: "green-text-gradient" },
+      { name: "ROS", color: "pink-text-gradient" },
+      { name: "Autonomous Vehicles", color: "orange-text-gradient" }
+    ],
+    image: gazebo_track,  // Replace with Gazebo sim or hardware image
+    source_code_link: "https://github.com/krish-sahni/f1tenth_sim_environment",  // Add your repo if public
+    more_info_link: "/projects/3",
+    detailed_description: "This project involved developing and deploying a Model Predictive Control (MPC) framework for an autonomous F1TENTH vehicle to follow a predefined trajectory while avoiding dynamic obstacles. The system models vehicle kinematics, discretizes dynamics, and formulates a quadratic programming (QP) problem solved at 10 Hz using cvxpy and the OSQP solver. Dynamic obstacles are encoded as half-space constraints to ensure safe avoidance. The controller was tested in both Gazebo simulation and real hardware, achieving smooth, collision-free trajectory tracking in cluttered environments.",
+    visual_aids: [
+      { type: "Simulation Waypoints", src: waypoints_484 },
+      { type: "Obstacle Avoidance in Simulation", src: obstacle_avoidance_sim },
+      { type: "MPC on Car", src: mpc_test },
+      { type: "Resulting Path", src: mpc_results }
+    ],
+    impact_results: "Successfully demonstrated a robust MPC implementation capable of handling nonlinear dynamics and real-time constraints in both simulated and physical environments. Reduced trajectory deviation and improved obstacle response timing compared to baseline controllers.",
+    documentation: [
+      { type: "Report Slides", link: "https://docs.google.com/presentation/d/16BdBYK3BexCTtMXT86-L2Q12sLRXLPeiQ8W2-8zCsuc/edit?usp=sharing" },
+      // { type: "System Architecture Diagram", link: "/assets/docs/mpc_architecture.pdf" }
+    ],
+    future_work: "Integrate perception-based dynamic path replanning, improve speed tuning under aggressive curvature, and explore switching MPC formulations for tighter real-time constraints."
+  },
+
+
   {
     name: "Unix-Based Operating System for RISC-V Embedded Systems",
     description: "Engineered a Unix-like operating system with virtual memory management, system calls, ELF file loading, and preemptive multitasking, built for RISC-V embedded systems.",    
@@ -297,7 +360,7 @@ const projects = [
     ],
     image: risc_pic, // Replace with the correct image path
     source_code_link: "https://github.com/krish-sahni/Unix_like_OS",
-    more_info_link: "/projects/2",
+    more_info_link: "/projects/4",
     detailed_description: "Built a Unix-like operating system from the ground up for RISC-V embedded systems. The OS features a custom file system, I/O management, process scheduling, and memory protection, following the Sv39 paging standard. Supports preemptive multitasking, system calls for user applications, and ELF file execution. Implemented virtual memory control and multi-threading/multi-processing capabilities, optimizing it for embedded hardware environments.",    visual_aids: [
       { type: "Kernel Architecture Diagram", src: kernel_arch },
       {type: "Filesystem Overview", src: filesys_overview}
@@ -327,7 +390,7 @@ const projects = [
     ],
     image: tetris_logo,
     source_code_link: "https://github.com/krish-sahni/tetris-game-system-verilog",
-    more_info_link: "/projects/3",
+    more_info_link: "/projects/5",
     detailed_description: "Developed an FPGA-based Tetris game using SystemVerilog and Vivado as part of a digital systems design project. Implemented real-time piece rotation, collision detection, and scoring logic, displayed via VGA output. Optimized the hardware architecture for low-latency performance, leveraging parallel processing on FPGA logic blocks.",    
     visual_aids: [
       { type: "Block diagram of the game logic", src: tetris_game_logic },
@@ -362,7 +425,7 @@ const projects = [
     ],
     image: Arduino_pic,
     source_code_link: "https://github.com/krish-sahni/Hand-Sensing-for-Room-Automation/",
-    more_info_link: "/projects/4",
+    more_info_link: "/projects/6",
     detailed_description: "Engineered a gesture-based smart room automation system using ultrasonic sensors and Arduino. Designed a custom 3D-printed sensor mount and implemented gesture recognition algorithms to enable touch-free control of lights and appliances. Utilized wireless communication (NRF24L01 module) to expand automation capabilities across multiple devices.",    
     visual_aids: [
       { type: "3D Print Casing", src: cad_photo },
@@ -390,7 +453,7 @@ const projects = [
     ],
     image: slc3_pic, // Replace with the actual image if available
     // source_code_link: "https://github.com/krish-sahni/lc3-cpu-fpga", // Placeholder, update if needed
-    more_info_link: "/projects/5",
+    more_info_link: "/projects/7",
     detailed_description: "Developed a **custom 16-bit CPU** on an FPGA, implementing the **LC3 architecture** using **SystemVerilog**. The CPU features **8 general-purpose registers, a program counter, an Arithmetic Logic Unit (ALU), and a control unit**. The design supports **memory-mapped I/O for efficient input and output operations**. The FPGA-based implementation is capable of executing **LC3 assembly code**, supporting the full instruction set defined in the **LC3 ISA (Instruction Set Architecture)**.",
     visual_aids: [
       { type: "CPU Architecture Diagram", src: slc3_pic },
@@ -427,7 +490,7 @@ const projects = [
     ],
     image: mini_pv_pic,
     source_code_link: "https://github.com/",
-    more_info_link: "/projects/6",
+    more_info_link: "/projects/8",
     detailed_description: "Designed a self-sustaining solar power system integrating a dual-axis tracking mechanism for maximum efficiency. Engineered an intelligent power management system using a charge controller, inverter, and battery storage to optimize energy output. The system is scalable for off-grid applications and smart energy solutions.",    
     visual_aids: [
       { type: "Electrical schematic of the PV system", src: mini_pv_electrical },
@@ -461,7 +524,7 @@ const projects = [
     ],
     image: e486_pic_setup,
     source_code_link: "https://github.com/",
-    more_info_link: "/projects/7",
+    more_info_link: "/projects/9",
     detailed_description: "Built a real-time control system to stabilize an inverted pendulum, a fundamental problem in control theory and robotics. Implemented PID and state-space controllers, refining system response through simulation and hardware testing. This project demonstrates proficiency in real-time feedback control, dynamic modeling, and embedded control system design.",
     visual_aids: [
       { type: "Block diagram of the control system", src: e486_pic_2 },
