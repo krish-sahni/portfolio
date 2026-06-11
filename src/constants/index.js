@@ -60,6 +60,8 @@ import waypoints_484 from '../assets/waypoints_484.png'
 import obstacle_avoidance_sim from '../assets/obstacle_avoidance_sim.gif'
 import mpc_results from '../assets/484_mpc_results.png'
 import mpc_test from '../assets/mpc_test_2.gif'
+import Final_Project_ECE486 from '../assets/Final_Project_ECE486.pdf'
+
 
 export const navLinks = [
   {
@@ -536,7 +538,7 @@ const projects = [
     ],
     impact_results: "Demonstrates deep knowledge of control systems. Application of theoretical concepts to practical problems.",
     documentation: [
-      { type: "Project Report", link: "../assets/project_report.pdf" },
+      { type: "Project Report", link: Final_Project_ECE486 },
       // { type: "Source Code", link: "https://github.com/" },
     ],
     future_work: "Enhancements in control algorithms and real-world applications.",
